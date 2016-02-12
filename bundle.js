@@ -60,7 +60,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, { routes: _routes2.default, history: _reactRouter.browserHistory }), document.getElementById('app'));
+	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, { routes: _routes2.default, history: _reactRouter.hashHistory }), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -24718,7 +24718,7 @@
 	  _reactRouter.Route,
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/:channelName', component: _Channel2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/#/:channelName', component: _Channel2.default })
 	);
 
 /***/ },
@@ -24813,6 +24813,7 @@
 	  componentDidMount: function componentDidMount() {
 	    var _this = this;
 
+	    console.log('wehehe');
 	    var channelName = this.props.params.channelName;
 
 	    _jquery2.default.get('https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername=' + channelName + '&key=AIzaSyBF9ELktlLr3AbDjEw1enLgBKHM0aZC5p0').success(function (data) {
@@ -34701,7 +34702,7 @@
 	  handleSubmit: function handleSubmit(event) {
 	    event.preventDefault();
 	    var channelName = event.target.elements[0].value;
-	    var path = "/" + channelName;
+	    var path = "/#/" + channelName;
 	    this.context.router.push(path);
 	  },
 	  render: function render() {
