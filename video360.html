@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>index</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta id="extViewportMeta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div id="wrapper"></div>
+  <script type="text/javascript" charset="utf-8" src="https://thiago.me/kaleidoscope/kaleidoscope.min.js"> </script>
+  <script type="text/javascript" charset="utf-8">
+  (function() {
+   v = new Kaleidoscope.Video({source: 'orion.mp4', height: window.innerHeight, width: window.innerWidth, containerId: '#wrapper'});
+   v.render();
+  })();
+  </script>
+</body>
+</html>
